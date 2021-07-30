@@ -81,6 +81,17 @@ namespace PruebaTecnica.Controllers
         // GET: Solicituds/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            IEnumerable<Personas> upersona = _context.Personas;
+            List<SelectListItem> listapersona = upersona.ToList().ConvertAll(u =>
+            {
+                return new SelectListItem()
+                {
+                    Text = u.Id.ToString(),
+                    Value = u.Id.ToString(),
+                    Selected = false
+                };
+            });
+            ViewBag.listapersona = listapersona;
             if (id == null)
             {
                 return NotFound();
