@@ -10,7 +10,7 @@ using PruebaTecnica.Data;
 namespace PruebaTecnica.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210729194146_migracion")]
+    [Migration("20210729235329_migracion")]
     partial class migracion
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -80,25 +80,12 @@ namespace PruebaTecnica.Migrations
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Personas")
+                    b.Property<int>("PersonaId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Personas");
-
                     b.ToTable("Solicitud");
-                });
-
-            modelBuilder.Entity("PruebaTecnica.Models.Solicitud", b =>
-                {
-                    b.HasOne("PruebaTecnica.Models.Personas", "PersonaId")
-                        .WithMany()
-                        .HasForeignKey("Personas")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("PersonaId");
                 });
 #pragma warning restore 612, 618
         }
