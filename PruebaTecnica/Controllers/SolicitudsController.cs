@@ -58,7 +58,19 @@ namespace PruebaTecnica.Controllers
                     Selected = false
                 };
             });
+            IEnumerable<Estados> uestados = _context.Estados;
+            List<SelectListItem> listaestados = uestados.ToList().ConvertAll(u =>
+            {
+                return new SelectListItem()
+                {
+                    Text = u.Estado.ToString(),
+                    Value = u.Estado.ToString(),
+                    Selected = false
+                };
+            });
             ViewBag.listapersona = listapersona;
+            ViewBag.listaestado = listaestados;
+
             return View();
         }
 
@@ -91,7 +103,18 @@ namespace PruebaTecnica.Controllers
                     Selected = false
                 };
             });
+            IEnumerable<Estados> uestados = _context.Estados;
+            List<SelectListItem> listaestados = uestados.ToList().ConvertAll(u =>
+            {
+                return new SelectListItem()
+                {
+                    Text = u.Estado.ToString(),
+                    Value = u.Estado.ToString(),
+                    Selected = false
+                };
+            });
             ViewBag.listapersona = listapersona;
+            ViewBag.listaestado = listaestados;
             if (id == null)
             {
                 return NotFound();
