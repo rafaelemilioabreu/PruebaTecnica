@@ -42,25 +42,14 @@ namespace PruebaTecnica.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Personas = table.Column<int>(type: "int", nullable: false),
+                    PersonaId = table.Column<int>(type: "int", nullable: false),
                     Estado = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FechaCreacion = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Solicitud", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Solicitud_Personas_Personas",
-                        column: x => x.Personas,
-                        principalTable: "Personas",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Solicitud_Personas",
-                table: "Solicitud",
-                column: "Personas");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -69,10 +58,10 @@ namespace PruebaTecnica.Migrations
                 name: "Estados");
 
             migrationBuilder.DropTable(
-                name: "Solicitud");
+                name: "Personas");
 
             migrationBuilder.DropTable(
-                name: "Personas");
+                name: "Solicitud");
         }
     }
 }

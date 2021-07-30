@@ -78,25 +78,12 @@ namespace PruebaTecnica.Migrations
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Personas")
+                    b.Property<int>("PersonaId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Personas");
-
                     b.ToTable("Solicitud");
-                });
-
-            modelBuilder.Entity("PruebaTecnica.Models.Solicitud", b =>
-                {
-                    b.HasOne("PruebaTecnica.Models.Personas", "PersonaId")
-                        .WithMany()
-                        .HasForeignKey("Personas")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("PersonaId");
                 });
 #pragma warning restore 612, 618
         }

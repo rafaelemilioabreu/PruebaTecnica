@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Create";
+    List<SelectListItem> listapersona = ViewBag.listapersona;
+    
 }
 
 <h1>Create</h1>
@@ -12,6 +14,14 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PersonaId" class="control-label"></label>
+
+                <div>
+                    @Html.DropDownListFor(model => model.PersonaId, listapersona, new { @class = "form-control" })
+
+                </div>
+            </div>
             <div class="form-group">
                 <label asp-for="Estado" class="control-label"></label>
                 <input asp-for="Estado" class="form-control" />

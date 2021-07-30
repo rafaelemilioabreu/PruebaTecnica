@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PruebaTecnica.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,12 +10,16 @@ namespace PruebaTecnica.Models
 {
     public class Solicitud
     {
+        
+
+
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "La persona id es Obligatorio")]
+        [Required(ErrorMessage = "PersonaId Obligatorio")]
         [ForeignKey("Personas")]
-        public Personas PersonaId { get; set; }
+
+        public int PersonaId { get; set; }
 
         [Required(ErrorMessage = "Estado Obligatorio")]
 
@@ -25,8 +30,6 @@ namespace PruebaTecnica.Models
         public DateTime FechaCreacion { get; set; }
 
      
-
-      
 
     }
 }
