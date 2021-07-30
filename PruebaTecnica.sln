@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PruebaTecnica", "PruebaTecnica\PruebaTecnica.csproj", "{E42B4BBA-FA5C-4EFE-BF73-09F7AB3B96C2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Algoritmos", "Algoritmos", "{17BFC2E8-A55E-4A1D-AEB8-8508ACCB6E1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{8EEEF109-0A57-4EF3-A3DE-8153F428F2A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{E42B4BBA-FA5C-4EFE-BF73-09F7AB3B96C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E42B4BBA-FA5C-4EFE-BF73-09F7AB3B96C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E42B4BBA-FA5C-4EFE-BF73-09F7AB3B96C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EEEF109-0A57-4EF3-A3DE-8153F428F2A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EEEF109-0A57-4EF3-A3DE-8153F428F2A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EEEF109-0A57-4EF3-A3DE-8153F428F2A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EEEF109-0A57-4EF3-A3DE-8153F428F2A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8EEEF109-0A57-4EF3-A3DE-8153F428F2A4} = {17BFC2E8-A55E-4A1D-AEB8-8508ACCB6E1D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DB8C82F-C10A-4856-912C-A163B43D23DE}
